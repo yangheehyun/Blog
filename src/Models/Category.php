@@ -1,0 +1,34 @@
+<?php namespace Dzung\Blog\Models;
+
+use Platform\Attributes\Models\Entity;
+
+
+class Category extends Entity {
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected $table = 'blog_categories';
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected $guarded = [
+		'id',
+	];
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected $with = [
+		'values.attribute',
+	];
+
+	/**
+	 * {@inheritDoc}
+	 */
+	protected $eavNamespace = 'dzung/blog.category';
+    public function posts(){
+        return $this->hasMany('\Dzung\Blog\Models\Post');
+    }
+}

@@ -1,0 +1,33 @@
+{
+	"name": "dzung/blog",
+	"type": "platform-extension",
+	"description": "Blog platform",
+	"authors": [
+		{
+			"name": "Dzung",
+			"email": "dungdc40@yahoo.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://packages.cartalyst.com"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"cartalyst/composer-installers": "1.1.*",
+		"illuminate/support": "4.2.*"
+	},
+	"autoload": {
+		"classmap": [
+			"database/migrations",
+			"database/seeds"
+		],
+		"psr-4": {
+			"Dzung\\Blog\\": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
